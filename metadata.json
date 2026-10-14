@@ -1,0 +1,7 @@
+{
+  "name": "Kinetix Robotics - K-12 STEM & Lab Collaboration",
+  "description": "Startup robotics curriculum, turnkey STEM labs, and class 4-9 progression roadmaps for school and center partnerships.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
