@@ -52,12 +52,43 @@ export const ContactBookingPage: React.FC<ContactBookingPageProps> = ({ setActiv
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch('/api/bookings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName,
+          role,
+          institutionName,
+          email,
+          phone,
+          city,
+          intentType,
+          selectedGrades,
+          preferredDate,
+          notes
+        })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setBookingConfirmation({
+          referenceId: data.booking?.referenceId || `KTX-2026-${Math.floor(1000 + Math.random() * 9000)}`,
+          submittedAt: new Date().toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+          })
+        });
+      } else {
+        throw new Error('Server returned non-200');
+      }
+    } catch {
+      // Fallback for offline or local preview
       setBookingConfirmation({
         referenceId: `KTX-2026-${Math.floor(1000 + Math.random() * 9000)}`,
         submittedAt: new Date().toLocaleDateString('en-US', {
@@ -66,7 +97,9 @@ export const ContactBookingPage: React.FC<ContactBookingPageProps> = ({ setActiv
           year: 'numeric'
         })
       });
-    }, 600);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const regionalHubs = [

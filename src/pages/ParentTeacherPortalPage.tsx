@@ -42,15 +42,39 @@ export const ParentTeacherPortalPage: React.FC<ParentTeacherPortalPageProps> = (
   const [selectedRubricGrade, setSelectedRubricGrade] = useState<string>('Class 6');
   const [selectedRubricLevel, setSelectedRubricLevel] = useState<number>(3); // 1, 2, 3, 4
 
-  const handleRunDiagnostic = (e: React.FormEvent) => {
+  const [serverSummary, setServerSummary] = useState<string>('');
+
+  const handleRunDiagnostic = async (e: React.FormEvent) => {
     e.preventDefault();
+    try {
+      const res = await fetch('/api/diagnostic/evaluate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          grade: quizGrade,
+          experience: quizExperience,
+          persistence: quizPersistence,
+          goal: quizGoal
+        })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.recommendationSummary) {
+          setServerSummary(data.recommendationSummary);
+        }
+      }
+    } catch {
+      // Fallback works with local computation
+    }
     setDiagnosticGenerated(true);
   };
 
   const getRecommendedGradePath = () => {
     const targetGrade = GRADE_ROADMAPS.find((g) => g.gradeNumber === quizGrade) || GRADE_ROADMAPS[2];
     let focusNote = '';
-    if (quizExperience === 'no_code') {
+    if (serverSummary) {
+      focusNote = serverSummary;
+    } else if (quizExperience === 'no_code') {
       focusNote = 'We recommend beginning with foundational kinetic mechanisms before introducing code.';
     } else if (quizGoal === 'olympiad') {
       focusNote = 'High competition readiness potential. We recommend our intensive WRO squad track.';
