@@ -26,6 +26,7 @@ export const ContactBookingPage: React.FC<ContactBookingPageProps> = ({ setActiv
   const [institutionName, setInstitutionName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
+  const [dateOfBirth, setDateOfBirth] = useState<string>('');
   const [city, setCity] = useState<string>('');
   const [preferredDate, setPreferredDate] = useState<string>('2026-11-04');
   const [selectedGrades, setSelectedGrades] = useState<number[]>([4, 5, 6, 7, 8, 9]);
@@ -66,6 +67,7 @@ export const ContactBookingPage: React.FC<ContactBookingPageProps> = ({ setActiv
           institutionName,
           email,
           phone,
+          dateOfBirth,
           city,
           intentType,
           selectedGrades,
@@ -331,6 +333,22 @@ export const ContactBookingPage: React.FC<ContactBookingPageProps> = ({ setActiv
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="+91 98765 43210"
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-cyan-400"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-slate-300 mb-1">
+                    Date of Birth *
+                  </label>
+                  <input
+                    type="date"
+                    required
+                    autoComplete="bday"
+                    value={dateOfBirth}
+                    onChange={(e) => setDateOfBirth(e.target.value)}
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-cyan-400"
                   />
                 </div>

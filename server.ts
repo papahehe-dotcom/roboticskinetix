@@ -14,6 +14,7 @@ interface BookingRecord {
   institutionName: string;
   email: string;
   phone: string;
+  dateOfBirth?: string;
   city: string;
   intentType: string;
   selectedGrades: number[];
@@ -93,6 +94,7 @@ async function startServer() {
       institutionName,
       email,
       phone,
+      dateOfBirth,
       city,
       intentType,
       selectedGrades,
@@ -100,10 +102,10 @@ async function startServer() {
       notes
     } = req.body;
 
-    if (!fullName || !email || !phone || !institutionName) {
+    if (!fullName || !email || !phone || !institutionName || !dateOfBirth) {
       res.status(400).json({
         success: false,
-        error: 'Missing required fields: fullName, email, phone, and institutionName are required.'
+        error: 'Missing required fields: fullName, email, phone, institutionName, and dateOfBirth are required.'
       });
       return;
     }
@@ -117,6 +119,7 @@ async function startServer() {
       institutionName: String(institutionName).trim(),
       email: String(email).trim().toLowerCase(),
       phone: String(phone).trim(),
+      dateOfBirth: dateOfBirth ? String(dateOfBirth).trim() : undefined,
       city: String(city || 'Not Specified'),
       intentType: String(intentType || 'school_demo'),
       selectedGrades: Array.isArray(selectedGrades) && selectedGrades.length > 0 ? selectedGrades : [4, 5, 6, 7, 8, 9],
