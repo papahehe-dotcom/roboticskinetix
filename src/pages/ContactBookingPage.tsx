@@ -173,7 +173,7 @@ export const ContactBookingPage: React.FC<ContactBookingPageProps> = ({ setActiv
           Collaboration Desk
         </span>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-          Connect with Kinetix Robotics
+          Connect with Smart Banana
         </h1>
         <p className="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
           Schedule an on-campus demonstration with our Mobile STEM Van, request evaluation hardware kits for your academic committee, or discuss STEM center franchise licensing.

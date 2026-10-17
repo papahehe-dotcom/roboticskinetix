@@ -39,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage }) => 
               <Cpu className="w-4 h-4" />
             </div>
             <span className="text-lg font-bold tracking-tight text-white whitespace-nowrap">
-              Kinetix Robotics
+              Smart Banana
             </span>
           </button>
 

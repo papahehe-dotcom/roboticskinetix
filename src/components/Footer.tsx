@@ -23,7 +23,7 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage }) => {
               <div className="w-7 h-7 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
                 <Cpu className="w-4 h-4" />
               </div>
-              <span className="text-base font-bold text-white tracking-tight">Kinetix Robotics</span>
+              <span className="text-base font-bold text-white tracking-tight">Smart Banana</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
               Purpose-built robotics and experiential STEM infrastructure for Classes 4 through 9.
@@ -145,7 +145,7 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage }) => {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>© 2026 Kinetix Robotics Technologies Inc. All rights reserved.</p>
+          <p>© 2026 Smart Banana. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span>Designed for Classes 4–9</span>
             <span aria-hidden="true">·</span>

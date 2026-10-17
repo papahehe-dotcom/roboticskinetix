@@ -69,7 +69,7 @@ async function startServer() {
   app.get('/api/health', (_req: Request, res: Response) => {
     res.json({
       status: 'healthy',
-      service: 'Kinetix Robotics Full-Stack Backend',
+      service: 'Smart Banana Full-Stack Backend',
       version: '1.2.0',
       uptimeSeconds: Math.floor(process.uptime()),
       timestamp: new Date().toISOString()
@@ -236,7 +236,7 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`[Kinetix Robotics Server] Full-Stack server running on port ${PORT}`);
+    console.log(`[Smart Banana Server] Full-Stack server running on port ${PORT}`);
   });
 }
 

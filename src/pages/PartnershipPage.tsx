@@ -462,7 +462,7 @@ export const PartnershipPage: React.FC<PartnershipPageProps> = ({ setActivePage 
           <div className="bg-slate-900 border border-slate-800 rounded-2xl max-w-xl w-full p-6 sm:p-8 space-y-6">
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
               <div>
-                <span className="text-[10px] font-mono text-cyan-400">Kinetix Institutional Deck</span>
+                <span className="text-[10px] font-mono text-cyan-400">Smart Banana Institutional Deck</span>
                 <h3 className="text-lg font-bold text-white">
                   Institutional Lab Proposal Summary
                 </h3>

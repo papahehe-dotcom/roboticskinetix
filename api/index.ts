@@ -43,7 +43,7 @@ const bookingsStore: BookingRecord[] = [
 app.get('/api/health', (_req: Request, res: Response) => {
   res.json({
     status: 'healthy',
-    service: 'Kinetix Robotics Vercel Serverless Backend',
+    service: 'Smart Banana Vercel Serverless Backend',
     version: '1.2.0',
     timestamp: new Date().toISOString()
   });

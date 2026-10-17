@@ -495,7 +495,7 @@ export const OverviewPage: React.FC<OverviewPageProps> = ({ setActivePage, setSe
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-slate-900/60 p-6 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-4">
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed italic">
-              &ldquo;Integrating Kinetix Robotics into our Classes 4–8 timetable transformed science education from rote theory into tangible excitement. We saw a +34% uptick in student enrollment for senior STEM streams within two years.&rdquo;
+              &ldquo;Integrating Smart Banana into our Classes 4–8 timetable transformed science education from rote theory into tangible excitement. We saw a +34% uptick in student enrollment for senior STEM streams within two years.&rdquo;
             </p>
             <div className="pt-4 border-t border-slate-800">
               <div className="text-xs font-bold text-white">Dr. Meenakshi Sundaram</div>

@@ -403,7 +403,7 @@ export const RoadmapPage: React.FC<RoadmapPageProps> = ({
           <div className="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between pb-4 border-b border-slate-800">
               <div>
-                <span className="text-[11px] font-mono text-cyan-400">Kinetix Robotics Curriculum Spec</span>
+                <span className="text-[11px] font-mono text-cyan-400">Smart Banana Robotics Curriculum Spec</span>
                 <h3 className="text-lg font-bold text-white">
                   {currentGrade.gradeLabel} Syllabus · {selectedBoard}
                 </h3>
